@@ -219,7 +219,7 @@ The remaining procedure is identical whether you have WSL or an Ubuntu distribut
 - Download demo projects along with the chip database using (we recommend downloading it to default destination _/home/<YOUR_USERNAME>_): <br />
 `git clone https://github.com/openXC7/demo-projects`
 - Download _TetriSaraj_ project from GitHub into demo projects folder (_/demo-projects_) using: <br />
-`git clone https://github.com/chili-chips-ba/openXC7-TetriSaraj ~/demo-projects/TetriSaraj`
+`git clone https://github.com/chili-chips/openXC7-TetriSaraj ~/demo-projects/TetriSaraj`
 - To install the "make" tool, use the following command: `sudo apt install make`
 - To install GCC package, first use: `sudo apt update`, and then: `sudo apt install gcc-riscv64-unknown-elf`
 
@@ -317,13 +317,13 @@ This work was sponsored by https://www.symbioticeda.com and showcased at https:/
 ### Next Steps
 
 This is not the end of TetriSaraj. Rather, it's an opener of a whole new play life:
-- port to [TangNano9K/20K](https://github.com/chili-chips-ba/openXC7-TetriSaraj/tree/main/99.more-boards/0.tang-nano-9k) and HDMI
-- port to CologneChip [GateMate](https://github.com/chili-chips-ba/openCologne/tree/main/5.TetriSaraj)
+- port to [TangNano9K/20K](https://github.com/chili-chips/openXC7-TetriSaraj/tree/main/99.more-boards/0.tang-nano-9k) and HDMI
+- port to CologneChip [GateMate](https://github.com/chili-chips/openCologne/tree/main/5.TetriSaraj)
 - port from PicoRV32 to our own <b>eduBOS5</b>
 - SOC cleanup and restructuring to our <b>eduSOC</b> built around our <b>eduBUS32</b>
 - migration from Verilog-1995 to SystemVerilog-2008
 - add support for Sprites
-- add analog sound using an [I2S DAC](https://github.com/chili-chips-ba/openCologne/tree/main/10.Bonus--6--I2S-DAC) 
+- add analog sound using an [I2S DAC](https://github.com/chili-chips/openCologne/tree/main/10.Bonus--6--I2S-DAC) 
 - add digital sound through HDMI-A
 - integration of all project variants into Docker Containers for the CI system that SymbioticEDA team is working on
 - propagation to other interested parties (Faculties of Electrical Engineering in Tuzla, Banja Luka, Pakistan, Tunis, ...), whoever and wherever wishes to leverage from it for their educational or other programs
