@@ -1,4 +1,4 @@
-[![GitLab:Mirror](https://badgen.net/badge/GitLab/Mirror/green)](https://gitlab.com/chili-chips/openXC7-TetriSaraj)
+[![GitLab:Mirror](https://badgen.net/badge/GitLab/Mirror/08C)](https://gitlab.com/chili-chips/openXC7-TetriSaraj)
 
 # openXC7-TetriSaraj
 This is the very first, independent and unbiased attempt to use <i>openXC7</i> tool flow for a real-life FPGA design. All its earlier uses and example projects were created by the insiders, who knew ahead of time about what pitfalls to avoid. And yes, we have uncovered issues along the way, duly reported them, and kept marching along, at times even resorting to hacks to make it work. 
