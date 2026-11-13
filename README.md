@@ -7,9 +7,9 @@ Most importantly, we did not even know that we were the Alpha testers, and learn
 
 The compute platform used for this work was <i>Windows Subsystem for Linux (WSL)</i> as opposed to native Linux/Ubuntu. The decision to go with WSL came from our intent to maximize project accessibility, not leaving out even the middle school youngsters, who typically don't have native Linux machines.
 
-<p align="center">
+<div align="center">
 <img width="762" alt="TetriSaraj" src="https://github.com/chili-chips-ba/openXC7-TetriSaraj/assets/67533663/1eacb310-5b40-4684-9328-2e06580bd204">
-</p>
+</div>
 
 ### NAND-2-Tetris Acknowledgement
 While we did not use any of https://www.nand2tetris.org materials, our project can be viewed as a bootstrapped, super-compressed variant of it. We therefore warmly recommend this superb step-by-step guide /*put together by Shimon Schocken and Noam Nisan*/ on how to build functioning Tetris starting from the mere NAND gates.
@@ -22,17 +22,17 @@ Even though most of us know what Tetris is and how to play it, we'll first brief
 
 Tetris is a combinatorial game where a player maneuvers differently-shaped pieces (aka <i>'tetrominoes'</i>) as they descend onto the playing field. The objective is to complete the lines by filling them with <i>tetrominoes</i>. When a line is fully filled, it gets automatically cleared, and the player earns points. The player can then utilize the cleared space to continue the game. It's <i>Game Over</i> when the lines with gaps (thus not cleared) reach the top of the playing field. The longer a player can delay this outcome, the higher his/her score. In the multiplayer games, the players compete to outlast their opponent(s). 
 
-<p align="center">
+<div align="center">
 <img src="https://github.com/chili-chips-ba/openXC7-TetriSaraj/assets/113244867/bbd94950-8c0d-4dce-a1da-66681715f41d">
-</p>
+</div>
 
 ### TetriSaraj Intro
 
 In our <i>TetriSaraj</i>, the pieces (<i>tetrominoes</i>) are entering the field from the sides, in the random fashion, so leaving less time to think about approach and strategy. While our pieces are <i>"falling"</i> horizontally from both sides, one at the time, the logic is otherwise the same as ordinary Tetris. The objective is to complete vertical lines by filling them with <i>tetrominoes</i>.
 
-<p align="center">
+<div align="center">
   <img width="408" alt="tetrisaraj" src="https://github.com/chili-chips-ba/openXC7-TetriSaraj/assets/113244867/ceb74ee9-2ee2-461a-ab3f-e279f34bf71e">
-</p>
+</div>
 
 ### Development Methodology
 
@@ -42,9 +42,9 @@ There are two main parts of our solution: HW and SW. To save time, and in the sp
 
 - At the same time, the SW group was working out the game algorithm in the comfortable <i>WinOS PC Visual Studio</i> setting, where the hi-res graphic output was emulated on a low-res terminal, as illustrated in the image below:
 
-<p align="center">
+<div align="center">
   <img src="https://github.com/chili-chips-ba/openXC7-TetriSaraj/assets/113244867/146a804c-dc82-46a3-8c0f-a984b1f0f3dc">
-</p>
+</div>
 
 When the logic of our game was fully worked out, we've switched to <b>integration</b> activities. 
 >Integration in this context is the <b>merge of SW and HW track</b>. 
@@ -77,9 +77,9 @@ The other SW parts are: <b>Game Controls</b>, <b>Timing</b> and <b>Rendering</b>
 
 <i>Tetrominoes</i> are the essence of the Game Logic element. They're illustrated in the figure below.
 
-<p align="center">
+<div align="center">
   <img src="https://github.com/chili-chips-ba/openXC7-TetriSaraj/assets/113244867/3f4bd9aa-19b2-46f8-92a8-beec3c671afe">
-</p>
+</div>
 
 There are 7 primary <i>tetromino</i> shapes. Including rotations, we get to 28 different shapes. However, to save memory, we store only the original shapes, using a 7x16 matrix of 1s and 0s, where 1s represent blocks, and 0s represent empty space. For example, let's take the 2nd <i>tetromino</i>, the squared one, and write it row-by-row from left to right: <br />
 > 0, 0, 0, 0; <br />
@@ -93,9 +93,9 @@ So, how can this 7x16 primary <i>tetromino</i> matrix account for all 28x16 rota
 
 For example, let's have a look at this shape and its rotations:
 
-<p align="center">
+<div align="center">
   <img src="https://github.com/chili-chips-ba/openXC7-TetriSaraj/assets/113244867/88ec5169-c7a7-4ad1-a3b8-18fb19fd305e">
-</p>
+</div>
 
 The 1st piece is the original, primary <i>tetromino</i>. The remaining 3 are its rotations. We now want to find the Index in the original piece for the corresponding mutant with coordinates X=2, Y=1, R=90 degrees. The relation between shapes rotated by 90 degrees is: <i>"Index = 12 + Y - (X * 4)"</i>. Which means that this specific block is on Index=5 of the original piece. 
 
@@ -157,9 +157,9 @@ The video interface between hardware and software consists of:
   
 The image illustrating the screen organization is showed below.
 
-<p align="center">
+<div align="center">
 <img src="https://github.com/chili-chips-ba/openXC7-TetriSaraj/assets/127020599/998e4dfb-b04a-4d86-b838-fc6c62dfbd28">
-</p>
+</div>
 
 ### Memory Map
 One of the first system design steps steps is to create a Memory Map that governs the interaction between CPU software and hardware responsible for rendering the 40x30 = 1200 elements on the screen. This Memory Map can be viewed as the <i>Instruction Set Architecture (ISA)</i> of our graphic mini-controller, serving as a contract or interface between the software and hardware components.
@@ -168,9 +168,9 @@ The Memory Map for the _character frame buffer_ (CFB) stores information about t
 
 By organizing the memory in this manner and establishing the Memory Map, we enable effective communication between CPU software and hardware, facilitating the rendering of graphics on the screen. This approach allows the CPU to access and manipulate the graphical data in a structured and predictable manner, thereby enabling smooth and controlled display updates.
 
-<p align="center">
+<div align="center">
  <img src="https://github.com/chili-chips-ba/openXC7-TetriSaraj/assets/127020599/ab73accd-ec38-471c-be1b-6f2b5f04d2b4">
-</p>
+</div>
 
 When creating characters, the goal is to be able to color each individual pixel in any color. In this regard, a memory map for the _character set_ has been created, implemented in a way that utilizes only the lower 12 bits of a 32-bit word.
 
@@ -178,9 +178,9 @@ The main reason for using such memory maps for character set and CFB is the simp
 
 The memory map for the _character set_ is shown below.
 
-<p align="center">
+<div align="center">
 <img src="https://github.com/chili-chips-ba/openXC7-TetriSaraj/assets/127020599/d4965765-c667-4c9e-bd89-e08ada5c9ad8">
-</p>
+</div>
 
 ### From HDL to Bitstream: Unraveling the FPGA Design Journey
 
